@@ -12,7 +12,7 @@
                 
                 default: // affichage par defaut
                     if($i <= 20) // si inferieur a 20 
-                        echo "<i>$i</i><br>"; // affiche les chiffre en italic
+                        echo "<i>$i</i><br>"; // souligner affiche les chiffre
                     elseif ($i >= 25 && $i <= 50) { // sinon si entre 25 et 50 efficher en gras
                         echo "<u>$i</u><br>";
                     }
