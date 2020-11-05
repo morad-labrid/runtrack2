@@ -9,15 +9,25 @@
     <input type="email" name="email" id="email">
     <br>
     <input type="submit" value="Envoyer">
-
 </form>
-
+<table>
+<th>Les arguments</th>
+<th>Les valeurs</th>
 <?php
 
-    $i=0;
-    foreach ($_POST as $key) {
-        $i++;
+    foreach ($_POST as $key => $value) {
+        echo "<tr>";
+        echo "<td>";
+        echo $key;
+        echo "</td>";
+        echo "<td>";
+        echo $value;
+        echo "</td>";
+        echo "</tr>";
     }
-    echo "Il y'a $i d'arguments<br>";
-
+    
 ?>
+
+</table>
+
+
