@@ -1,4 +1,5 @@
-<form action="index.php" method="get">
+
+<form action="index.php" method="post">
     <label for="name">Indiquez votre Nom</label>
     <input type="text" name="nom" id="name">
     <br>
@@ -9,15 +10,25 @@
     <input type="email" name="email" id="email">
     <br>
     <input type="submit" value="Envoyer">
-
 </form>
-
+<table>
+<th>Les arguments</th>
+<th>Les valeurs</th>
 <?php
 
-    $i=0;
-    foreach ($_GET as $key) {
-        $i++;
+    foreach ($_POST as $key => $value) {
+        echo "<tr>";
+        echo "<td>";
+        echo $key;
+        echo "</td>";
+        echo "<td>";
+        echo $value;
+        echo "</td>";
+        echo "</tr>";
     }
-    echo "Il y'a $i d'arguments<br>";
-
+    
 ?>
+
+</table>
+
+
