@@ -1,7 +1,7 @@
 <?php
 
     $db = mysqli_connect('localhost', 'root', 'root', 'jour08');
-    $sql = mysqli_query($db, "SELECT * FROM etudiants WHERE sexe = 'Femme'");
+    $sql = mysqli_query($db, "SELECT SUM(superficie) FROM etage");
 
 ?>
 
@@ -32,23 +32,13 @@ table  td {
     <table>
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Prénom</th>
-                <th>Nom</th>
-                <th>Date de naissance</th>
-                <th>Sexe</th>
-                <th>Email</th>
+                <th>superficie_totale</th>
             </tr>
         </thead>
         <tbody>
         <?php   
             while ($row = mysqli_fetch_array($sql)) {
-                echo "<tr><td>$row[id]</td>";
-                echo "<td>$row[prenom]</td>";
-                echo "<td>$row[nom]</td>";
-                echo "<td>$row[naissance]</td>";
-                echo "<td>$row[sexe]</td>";
-                echo "<td>$row[email]</td></tr>";
+                echo '<tr><td>'.$row['SUM(superficie)'].'</td>';
             }
         ?>
         </tbody>

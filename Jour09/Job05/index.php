@@ -1,7 +1,7 @@
 <?php
 
     $db = mysqli_connect('localhost', 'root', 'root', 'jour08');
-    $sql = mysqli_query($db, "SELECT * FROM etudiants WHERE sexe = 'Femme'");
+    $sql = mysqli_query($db, "SELECT * FROM etudiants WHERE naissance > '2002-11-10'");
 
 ?>
 

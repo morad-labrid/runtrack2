@@ -1,7 +1,4 @@
-SELECT `s`.`nom`, `e`.`nom`
-FROM `salles` `s`,
-     `etage` `e`
-WHERE `s`.`id_etage` = `e`.`id`;
+SELECT salles.nom, etage.nom FROM salles INNER JOIN etage ON salles.id_etage = etage.id
 
 
 

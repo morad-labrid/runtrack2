@@ -1,9 +1,7 @@
 <?php
 
-    $sql = mysqli_connect('localhost', 'root', 'root', 'jour08');
-    $salles = mysqli_query($sql, "SELECT nom, capacite FROM salles;");
-    $result = mysqli_num_rows($salles);
-    $row = mysqli_fetch_all ( $salles );
+    $db = mysqli_connect('localhost', 'root', 'root', 'jour08');
+    $sql = mysqli_query($db, "SELECT nom, capacite FROM salles");
 
 ?>
 
@@ -37,30 +35,12 @@ table  td {
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td><?php echo $row[0][0]  ?></td>
-                <td><?php echo $row[0][1]  ?></td>
-            </tr>
-            <tr>
-                <td><?php echo $row[1][0]  ?></td>
-                <td><?php echo $row[1][1]  ?></td>
-            </tr>
-            <tr>
-                <td><?php echo $row[2][0]  ?></td>
-                <td><?php echo $row[2][1]  ?></td>
-            </tr>
-            <tr>
-                <td><?php echo $row[3][0]  ?></td>
-                <td><?php echo $row[3][1]  ?></td>
-            </tr>
-            <tr>
-                <td><?php echo $row[4][0]  ?></td>
-                <td><?php echo $row[4][1]  ?></td>
-            </tr>
-            <tr>
-                <td><?php echo $row[5][0]  ?></td>
-                <td><?php echo $row[5][1]  ?></td>
-            </tr>
+        <?php   
+            while ($row = mysqli_fetch_array($sql)) {
+                echo "<tr><td>$row[nom]</td>";
+                echo "<td>$row[capacite]</td></tr>";
+            }
+        ?>
         </tbody>
     </table>
 </body>
