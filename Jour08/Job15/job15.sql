@@ -1,4 +1,7 @@
-SELECT nom, id_etage FROM salles
+SELECT `s`.`nom`, `e`.`nom`
+FROM `salles` `s`,
+     `etage` `e`
+WHERE `s`.`id_etage` = `e`.`id`;
 
 
 
